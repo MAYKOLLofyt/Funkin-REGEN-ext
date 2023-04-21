@@ -6,7 +6,7 @@ class MainOptionsSubState extends OptionsSubState
 {
 	public function new(parent:OptionsState)
 	{
-		super(parent, ['Appearance', 'Gameplay', 'About', 'Github repo']);
+		super(parent, ['Appearance', 'Gameplay', 'About', 'Exit']);
 	}
 
 	override function onSelect(value:String = "", number:Int = 0)
@@ -21,8 +21,8 @@ class MainOptionsSubState extends OptionsSubState
 				FlxG.state.openSubState(new GameplayOptionsSubstate(parent));
 			case 'about':
 				FlxG.switchState(new AboutState());
-			case 'github repo':
-				FlxG.openURL("https://github.com/zatrit/Funkin-REGEN-ext");
+			case 'Exit':
+				FlxG.switchState(new MainMenuState());
 		}
 	}
 
